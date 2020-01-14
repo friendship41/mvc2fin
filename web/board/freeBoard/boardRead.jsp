@@ -16,8 +16,8 @@
     <title>${requestScope.boardVO.subject}</title>
     <script>
         function goTOMod() {
-            <%--var url = "/jsp_homepage1/board1/board_mod.jsp?no="+<%=no%>;--%>
-            <%--location.href=url;--%>
+            var url = "freeBoardMod.do?no=${requestScope.boardVO.no}";
+            location.href=url;
         }
         function goTOReply() {
             <%--var url1 = "/jsp_homepage1/board1/writeBoard1.jsp?no="+<%=no%>;--%>

@@ -251,4 +251,36 @@ public class BoardDAO
     }
 
 
+
+    public void updateSingleBoard(BoardVO boardVO)
+    {
+        Connection con = null;
+        PreparedStatement pstmt = null;
+        ResultSet rs = null;
+
+        try
+        {
+            con = this.getConnection();
+
+            String sql = "UPDATE JAVALINE_BOARD1 SET SUBJECT=?, CONTENT=?, REGDATE=SYSDATE, IP=? WHERE NO=?";
+
+            pstmt = con.prepareStatement(sql);
+            pstmt.setString(1, boardVO.getSubject());
+            pstmt.setString(2, boardVO.getContent());
+            pstmt.setString(3, boardVO.getIp());
+            pstmt.setInt(4, boardVO.getNo());
+            pstmt.executeUpdate();
+
+        }
+        catch (SQLException e)
+        {
+            System.out.println("BoardDAO/updateSingleBoard: "+e.getMessage());
+        }
+        finally
+        {
+            this.disConnect(con,pstmt,rs);
+        }
+    }
+
+
 }
