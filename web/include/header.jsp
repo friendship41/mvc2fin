@@ -15,7 +15,7 @@
             <li><a href="index.do">Home</a></li>
             <li><a href="#">Who is Tommy.Lee?</a></li>
             <li><a href="login.do">Member</a></li>
-            <li><a href="/mvc2">Board</a></li>
+            <li><a href="freeBoardList.do">Board</a></li>
             <li><a href="#">Ajax Board</a></li>
         </ul>
     </nav>

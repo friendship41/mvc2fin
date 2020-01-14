@@ -7,7 +7,7 @@
         <c:if test="${sessionScope.id ne null}">
             <li><a href="logoutProc.do">Logout</a></li>
         </c:if>
-        <li><a href="/mvc2">Board</a></li>
+        <li><a href="freeBoardList.do">Board</a></li>
         <li><a href="#">Ajax Board</a></li>
     </ul>
 </nav>
