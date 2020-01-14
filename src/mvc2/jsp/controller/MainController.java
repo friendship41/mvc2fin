@@ -28,8 +28,9 @@ public class MainController extends HttpServlet
     @Override
     public void init() throws ServletException
     {
-        String propName = getServletConfig().getInitParameter("propertyConfig");
         Properties prop = new Properties();
+
+        String propName = getServletConfig().getInitParameter("propertyConfig");
         String rootPath = getServletConfig().getServletContext().getRealPath("/WEB-INF");
         FileInputStream fis = null;
         try
@@ -65,7 +66,7 @@ public class MainController extends HttpServlet
             {
                 Class actionClass = Class.forName(prop.getProperty(actionURL));
                 Object actionInstance = actionClass.newInstance();
-                commandMap.put(actionURL,actionInstance);
+                commandMap.put(actionURL, actionInstance);
             }
             catch (ClassNotFoundException e)
             {

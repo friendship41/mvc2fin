@@ -283,4 +283,32 @@ public class BoardDAO
     }
 
 
+
+    public void deleteSingleBoard(int no)
+    {
+        Connection con = null;
+        PreparedStatement pstmt = null;
+        ResultSet rs = null;
+
+        try
+        {
+            con = this.getConnection();
+
+            String sql = "DELETE FROM JAVALINE_BOARD1 WHERE NO=?";
+
+            pstmt = con.prepareStatement(sql);
+            pstmt.setInt(1, no);
+            pstmt.executeUpdate();
+
+        }
+        catch (SQLException e)
+        {
+            System.out.println("BoardDAO/deleteSingleBoard: "+e.getMessage());
+        }
+        finally
+        {
+            this.disConnect(con,pstmt,rs);
+        }
+    }
+
 }

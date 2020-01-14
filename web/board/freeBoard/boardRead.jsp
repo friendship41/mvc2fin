@@ -27,11 +27,11 @@
             <%--location.href=url4;--%>
         }
         function deleteConfirm() {
-            <%--var confirmm = confirm("정말로 삭제하시겠습니까?");--%>
-            <%--if(confirmm === true)--%>
-            <%--{--%>
-            <%--    location.href="/jsp_homepage1/board1/procDeleteBoard.jsp?no="+<%=no%>;--%>
-            <%--}--%>
+            var confirmm = confirm("정말로 삭제하시겠습니까?");
+            if(confirmm === true)
+            {
+                location.href="freeBoardDelete.do?no=${requestScope.boardVO.no}";
+            }
         }
     </script>
 </head>
