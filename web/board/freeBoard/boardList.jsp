@@ -65,7 +65,7 @@
     <article id="contents">
         <h1>Board</h1>
         <c:if test="${sessionScope.id ne null}">
-            <input type="button" value="write" class="btn" onclick="location.href='/jsp_homepage1/board1/writeBoard1.jsp'"/>
+            <input type="button" value="write" class="btn" onclick="location.href='freeBoardWrite.do'"/>
         </c:if>
             <table id="board">
               <tr>

@@ -55,6 +55,38 @@ public class BoardDAO
 
 
 
+    public void insertNewBoard(BoardVO boardVO)
+    {
+        Connection con = null;
+        PreparedStatement pstmt = null;
+        ResultSet rs = null;
+
+        try
+        {
+            con = this.getConnection();
+
+            String sql = "INSERT INTO JAVALINE_BOARD1 VALUES(JAVALINE_BOARD1__NO_SEQ.NEXTVAL, ?,?,?,0, (SELECT MAX(REF)+1 FROM JAVALINE_BOARD1), 0, 0, SYSDATE, ?, ?)";
+
+            pstmt = con.prepareStatement(sql);
+            pstmt.setString(1, boardVO.getWriter());
+            pstmt.setString(2, boardVO.getEmail());
+            pstmt.setString(3, boardVO.getSubject());
+            pstmt.setString(4, boardVO.getContent());
+            pstmt.setString(5, boardVO.getIp());
+            pstmt.executeUpdate();
+
+        }
+        catch (SQLException e)
+        {
+            System.out.println("BoardDAO/insertNewBoard: "+e.getMessage());
+        }
+        finally
+        {
+            this.disConnect(con,pstmt,rs);
+        }
+    }
+
+
     public int selectBoardCount()
     {
         Connection con = null;
