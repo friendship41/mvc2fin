@@ -1,0 +1,56 @@
+<component name="ArtifactManager">
+  <artifact type="exploded-war" name="mvc2fin:war exploded">
+    <output-path>$PROJECT_DIR$/out/artifacts/mvc2fin_war_exploded</output-path>
+    <root id="root">
+      <element id="javaee-facet-resources" facet="mvc2fin/web/Web" />
+      <element id="directory" name="WEB-INF">
+        <element id="directory" name="classes">
+          <element id="module-output" name="mvc2fin" />
+        </element>
+        <element id="directory" name="lib">
+          <element id="library" level="project" name="JAX-WS-Apache Axis" />
+          <element id="file-copy" path="X:/4_drivers/jmail/mail.jar" />
+          <element id="file-copy" path="X:/4_drivers/jmail/activation.jar" />
+          <element id="file-copy" path="X:/apache-tomcat-9.0.29/lib/el-api.jar" />
+          <element id="file-copy" path="X:/apache-tomcat-9.0.29/lib/jasper.jar" />
+          <element id="file-copy" path="X:/apache-tomcat-9.0.29/lib/jsp-api.jar" />
+          <element id="file-copy" path="X:/apache-tomcat-9.0.29/lib/catalina.jar" />
+          <element id="file-copy" path="X:/apache-tomcat-9.0.29/lib/ecj-4.13.jar" />
+          <element id="file-copy" path="X:/apache-tomcat-9.0.29/lib/jasper-el.jar" />
+          <element id="file-copy" path="X:/apache-tomcat-9.0.29/lib/jaspic-api.jar" />
+          <element id="file-copy" path="X:/apache-tomcat-9.0.29/lib/tomcat-api.jar" />
+          <element id="file-copy" path="X:/apache-tomcat-9.0.29/lib/tomcat-jni.jar" />
+          <element id="file-copy" path="X:/apache-tomcat-9.0.29/lib/catalina-ha.jar" />
+          <element id="file-copy" path="X:/apache-tomcat-9.0.29/lib/servlet-api.jar" />
+          <element id="file-copy" path="X:/apache-tomcat-9.0.29/lib/tomcat-dbcp.jar" />
+          <element id="file-copy" path="X:/apache-tomcat-9.0.29/lib/tomcat-jdbc.jar" />
+          <element id="file-copy" path="X:/apache-tomcat-9.0.29/lib/tomcat-util.jar" />
+          <element id="file-copy" path="X:/apache-tomcat-9.0.29/lib/catalina-ant.jar" />
+          <element id="file-copy" path="X:/apache-tomcat-9.0.29/lib/tomcat-coyote.jar" />
+          <element id="file-copy" path="X:/apache-tomcat-9.0.29/lib/websocket-api.jar" />
+          <element id="file-copy" path="X:/apache-tomcat-9.0.29/lib/tomcat-i18n-cs.jar" />
+          <element id="file-copy" path="X:/apache-tomcat-9.0.29/lib/tomcat-i18n-de.jar" />
+          <element id="file-copy" path="X:/apache-tomcat-9.0.29/lib/tomcat-i18n-es.jar" />
+          <element id="file-copy" path="X:/apache-tomcat-9.0.29/lib/tomcat-i18n-fr.jar" />
+          <element id="file-copy" path="X:/apache-tomcat-9.0.29/lib/tomcat-i18n-ja.jar" />
+          <element id="file-copy" path="X:/apache-tomcat-9.0.29/lib/tomcat-i18n-ko.jar" />
+          <element id="file-copy" path="X:/apache-tomcat-9.0.29/lib/tomcat-i18n-ru.jar" />
+          <element id="file-copy" path="X:/apache-tomcat-9.0.29/lib/annotations-api.jar" />
+          <element id="file-copy" path="X:/apache-tomcat-9.0.29/lib/catalina-tribes.jar" />
+          <element id="file-copy" path="X:/apache-tomcat-9.0.29/lib/tomcat-util-scan.jar" />
+          <element id="file-copy" path="X:/apache-tomcat-9.0.29/lib/tomcat-websocket.jar" />
+          <element id="file-copy" path="X:/apache-tomcat-9.0.29/lib/tomcat-i18n-pt-BR.jar" />
+          <element id="file-copy" path="X:/apache-tomcat-9.0.29/lib/tomcat-i18n-zh-CN.jar" />
+          <element id="file-copy" path="X:/apache-tomcat-9.0.29/lib/catalina-storeconfig.jar" />
+          <element id="file-copy" path="X:/4_drivers/el-api.jar" />
+          <element id="file-copy" path="X:/4_drivers/jstl/javax.servlet.jsp.jstl-1.2.1.jar" />
+          <element id="file-copy" path="X:/4_drivers/jstl/javax.servlet.jsp.jstl-api-1.2.1.jar" />
+          <element id="file-copy" path="X:/4_drivers/apache_dbconnection_pool/commons-dbcp2-2.7.0.jar" />
+          <element id="file-copy" path="X:/4_drivers/apache_dbconnection_pool/commons-pool2-2.8.0.jar" />
+          <element id="file-copy" path="X:/4_drivers/apache_dbconnection_pool/commons-collections4-4.4.jar" />
+          <element id="file-copy" path="X:/4_drivers/ojdbc8.jar" />
+        </element>
+      </element>
+    </root>
+  </artifact>
+</component>
