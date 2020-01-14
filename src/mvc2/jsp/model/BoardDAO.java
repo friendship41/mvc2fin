@@ -169,4 +169,86 @@ public class BoardDAO
 
 
 
+
+    public void updateReadCnt(int no)
+    {
+        Connection con = null;
+        PreparedStatement pstmt = null;
+        ResultSet rs = null;
+
+        try
+        {
+            con = this.getConnection();
+
+            String sql = "UPDATE JAVALINE_BOARD1 SET READCNT=READCNT+1 WHERE NO=?";
+
+            pstmt = con.prepareStatement(sql);
+            pstmt.setInt(1, no);
+            pstmt.executeUpdate();
+
+        }
+        catch (SQLException e)
+        {
+            System.out.println("BoardDAO/updateReadCnt: "+e.getMessage());
+        }
+        finally
+        {
+            this.disConnect(con,pstmt,rs);
+        }
+    }
+
+
+
+
+    public BoardVO selectSingleBoard(int no)
+    {
+        Connection con = null;
+        PreparedStatement pstmt = null;
+        ResultSet rs = null;
+        BoardVO boardVO = new BoardVO();
+
+        try
+        {
+            con = this.getConnection();
+
+            String sql = "SELECT WRITER, EMAIL, SUBJECT, READCNT, REF, STEP, DEPTH, TO_CHAR(REGDATE,'YYYY/MM/DD') REGDATE, CONTENT, IP FROM JAVALINE_BOARD1 WHERE NO=?";
+
+            pstmt = con.prepareStatement(sql);
+            pstmt.setInt(1, no);
+            rs = pstmt.executeQuery();
+
+            if (rs.next())
+            {
+                boardVO.setNo(no);
+                boardVO.setWriter(rs.getString("WRITER"));
+                boardVO.setEmail(rs.getString("EMAIL"));
+                boardVO.setSubject(rs.getString("SUBJECT"));
+                boardVO.setReadcnt(rs.getInt("READCNT"));
+                boardVO.setRef(rs.getInt("REF"));
+                boardVO.setStep(rs.getInt("STEP"));
+                boardVO.setDepth(rs.getInt("DEPTH"));
+                boardVO.setRegdate(rs.getString("REGDATE"));
+                boardVO.setContent(rs.getString("CONTENT"));
+                boardVO.setIp(rs.getString("IP"));
+
+                return boardVO;
+            }
+            else
+            {
+                return null;
+            }
+
+        }
+        catch (SQLException e)
+        {
+            System.out.println("BoardDAO/selectSingleBoard: "+e.getMessage());
+            return null;
+        }
+        finally
+        {
+            this.disConnect(con,pstmt,rs);
+        }
+    }
+
+
 }

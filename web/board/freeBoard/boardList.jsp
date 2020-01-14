@@ -16,7 +16,7 @@
     <title>자유게시판</title>
       <script>
         function goToBoard_read(trObj) {
-          var url = "/jsp_homepage1/board1/board_read.jsp?no="+trObj.id;
+          var url = "freeBoardRead.do?no="+trObj.id;
           console.log(trObj.id);
           location.href=url;
         }
