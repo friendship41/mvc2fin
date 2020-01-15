@@ -20,11 +20,8 @@
             location.href=url;
         }
         function goTOReply() {
-            <%--var url1 = "/jsp_homepage1/board1/writeBoard1.jsp?no="+<%=no%>;--%>
-            <%--var url2 = url1+"&ref="+<%=board1VO.getRef()%>;--%>
-            <%--var url3 = url2+"&step="+<%=board1VO.getStep()%>;--%>
-            <%--var url4 = url3+"&depth="+<%=board1VO.getDepth()%>;--%>
-            <%--location.href=url4;--%>
+            var url1 = "freeBoardWrite.do?no=${requestScope.boardVO.no}&ref=${requestScope.boardVO.ref}&step=${requestScope.boardVO.step}&depth=${requestScope.boardVO.depth}"
+            location.href=url1;
         }
         function deleteConfirm() {
             var confirmm = confirm("정말로 삭제하시겠습니까?");

@@ -311,4 +311,72 @@ public class BoardDAO
         }
     }
 
+
+
+    public void updateRefStepDepth(BoardVO boardVO)
+    {
+        Connection con = null;
+        PreparedStatement pstmt = null;
+        ResultSet rs = null;
+
+        try
+        {
+            con = this.getConnection();
+
+            String sql = "UPDATE JAVALINE_BOARD1 SET STEP=STEP+1 WHERE REF=? AND STEP>?";
+
+            pstmt = con.prepareStatement(sql);
+            pstmt.setInt(1, boardVO.getRef());
+            pstmt.setInt(2, boardVO.getStep());
+            pstmt.executeUpdate();
+
+        }
+        catch (SQLException e)
+        {
+            System.out.println("BoardDAO/updateRefStepDepth: "+e.getMessage());
+        }
+        finally
+        {
+            this.disConnect(con,pstmt,rs);
+        }
+    }
+
+
+
+    public void insertReply(BoardVO boardVO)
+    {
+        Connection con = null;
+        PreparedStatement pstmt = null;
+        ResultSet rs = null;
+
+        try
+        {
+            con = this.getConnection();
+
+            String sql = "INSERT INTO JAVALINE_BOARD1 VALUES(JAVALINE_BOARD1__NO_SEQ.NEXTVAL, ?, ?, ?, 0, ?, ?, ?, SYSDATE, ?, ?)";
+
+            pstmt = con.prepareStatement(sql);
+            pstmt.setString(1, boardVO.getWriter());
+            pstmt.setString(2, boardVO.getEmail());
+            pstmt.setString(3, boardVO.getSubject());
+            pstmt.setInt(4, boardVO.getRef());
+            pstmt.setInt(5, boardVO.getStep()+1);
+            pstmt.setInt(6, boardVO.getDepth()+1);
+            pstmt.setString(7, boardVO.getContent());
+            pstmt.setString(8, boardVO.getIp());
+            pstmt.executeUpdate();
+
+        }
+        catch (SQLException e)
+        {
+            System.out.println("Board1DAO/insertReply: "+e.getMessage());
+        }
+        finally
+        {
+            this.disConnect(con,pstmt,rs);
+        }
+    }
+
+
+
 }

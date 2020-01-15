@@ -56,7 +56,12 @@
         </table>
         <div id="box">
             <div class="board">
-                <form method="post" action="freeBoardWriteProc.do" id="gogogo" name="gogogo">
+                <c:if test="${param.ref eq null}">
+                    <form method="post" action="freeBoardWriteProc.do" id="gogogo" name="gogogo">
+                </c:if>
+                <c:if test="${param.ref ne null}">
+                    <form method="post" action="freeBoardReply.do" id="gogogo" name="gogogo">
+                </c:if>
                     <div><label class="label">name</label><input type="text" required autofocus size="25" value="${requestScope.myInfo.name}" readonly name="wname"></div>
                     <div><label class="label">e-mail</label><input type="email" required size="25" value="${requestScope.myInfo.email}" readonly name="email"></div>
                     <c:if test="${requestScope.boardVO.no eq null}">
@@ -71,10 +76,10 @@
                     <div class="board_btn">
 <%--                        <input type="hidden" value="<%=vo.getId()%>" name="writer">--%>
                         <input type="hidden" id="ip" name="ip">
-<%--                        <input type="hidden" id="no" name="no" value="<%=no%>">--%>
-<%--                        <input type="hidden" id="ref" name="ref" value="<%=refSt%>">--%>
-<%--                        <input type="hidden" id="step" name="step" value="<%=stepSt%>">--%>
-<%--                        <input type="hidden" id="depth" name="depth" value="<%=depthSt%>">--%>
+                        <input type="hidden" id="no" name="no" value="${param.no}">
+                        <input type="hidden" id="ref" name="ref" value="${param.ref}">
+                        <input type="hidden" id="step" name="step" value="${param.step}">
+                        <input type="hidden" id="depth" name="depth" value="${param.depth}">
                         <input type="reset" value="reset" class="btn">
                         <input type="button" value="save" class="btn" onclick="checkWriteBoard()">
                     </div>
